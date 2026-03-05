@@ -1,0 +1,22 @@
+{
+  "name": "broadcast_streaming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --trace-warnings dist/server.js",
+    "build": "tsc --project ./tsconfig.json",
+    "dev": "nodemon --exec node --trace-warnings --import=./src/dev/register.js src/server.ts",
+    "mode": "nodemon --watch src --ext ts --exec \"tsc --noemit && node --trace-warnings --import=./src/dev/register.js src/server.ts\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
