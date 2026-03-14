@@ -1,14 +1,13 @@
-import express, { Request, Response } from 'express';
-import { json } from 'express';
+import express from "express";
 
 const app = express();
 const PORT = 8080;
 
 // Middleware
-app.use(json());
+app.use(express.json());
 
 // Routes
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the Express server!' });
 });
 
