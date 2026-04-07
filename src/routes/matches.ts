@@ -25,9 +25,9 @@ router.get("/", async (req, res) => {
 
     res.json({ message: "List matches", data });
   } catch (error) {
+    console.error("Error listing matches:", error);
     res.status(500).json({
       error: "Failed to list matches",
-      details: JSON.stringify(error),
     });
   }
 });
@@ -59,7 +59,6 @@ router.post("/", async (req, res) => {
     console.error("Error creating match:", error);
     res.status(500).json({
       error: "Internal server error",
-      details: JSON.stringify(error),
     });
   }
 });

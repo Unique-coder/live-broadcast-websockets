@@ -25,7 +25,8 @@ export const matchIdParamSchema = z.object({
 // Helper function to validate ISO date string
 const isValidISODateString = (dateString: string) => {
   const date = new Date(dateString);
-  return !isNaN(date.getTime()) && date.toISOString() === dateString;
+  // Check if date is valid and string matches ISO 8601 pattern
+  return !isNaN(date.getTime()) && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?(Z|[+-]\d{2}:\d{2})$/.test(dateString);
 };
 
 // Schema for creating a match
