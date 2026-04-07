@@ -9,7 +9,9 @@
     "dev": "nodemon --exec node --trace-warnings --import=./src/dev/register.js src/server.ts",
     "mode": "nodemon --watch src --ext ts --exec \"tsc --noemit && node --trace-warnings --import=./src/dev/register.js src/server.ts\"",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate"
+    "db:migrate": "drizzle-kit migrate",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -21,13 +23,19 @@
     "express": "^5.2.1",
     "nodemon": "^3.1.14",
     "pg": "^8.20.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/pg": "^8.18.0",
+    "@types/supertest": "^7.2.0",
+    "@vitest/coverage-v8": "^4.1.3",
     "drizzle-kit": "^0.31.9",
+    "light-my-request": "^6.6.0",
+    "supertest": "^7.2.2",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.3"
   }
 }
